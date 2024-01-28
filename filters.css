@@ -1,0 +1,23 @@
+
+
+main{
+  width: 100%;
+  background-color: #eef0f4;
+  display: flex;
+  gap: 10px;
+  
+  
+}
+
+#filter{
+-webkit-box-shadow: 10px 10px 50px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 50px -8px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 50px -8px rgba(0,0,0,0.75);
+background-color:white;
+margin: 15px;
+width: 30%;
+border-radius: 10px;
+/* border: 2px solid black; */
+height: 80vh;
+}
+
