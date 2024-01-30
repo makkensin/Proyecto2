@@ -186,7 +186,8 @@ const printFilters = () => {
     const filtBoton = document.createElement("div");
     filtBoton.className = "filt-boton";
     filtBoton.classList.add("flex-column");
-    const btn1 = document.createElement("button");  
+    const btn1 = document.createElement("button"); 
+    btn1.addEventListener('click', () => filterPrice())
     btn1.className ="button1";
     btn1.textContent = "buscar";
     const btn2 = document.createElement("button"); 
@@ -226,7 +227,16 @@ const filterSeller = () =>{
 
 
 
+const filterPrice = () =>{
+  const priceInput = document.querySelector("input");
+  const priceProduct = products.filter((product) =>{
+       if (priceInput.value >= product.price) {
+         return product
+       }
+      });
+      printProducts(priceProduct)
 
+}
 
 
 
