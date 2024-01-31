@@ -163,4 +163,48 @@ a {
  background-color: rgb(124, 120, 120);
 }
 
+@media (max-width: 943px){
+  
+  .logo{
+    padding-top: 3px;
+    width: 115px;
+    cursor: pointer;
+  }
+  .logo > img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 
+.ul-1{
+  display: none;
+}
+
+.ul-2{
+  gap: 20px;
+}
+
+.linki{
+
+display: none;
+}
+
+
+
+.link{
+font-size: 12px;
+font-weight: 600;
+color: #000E23;
+
+}
+.linked{
+padding: 5px;
+font-size: 14px;
+font-weight: 600;
+background-color: black;
+color:white;
+border-radius: 20px;
+transition: all 0.5s; 
+}
+
+}

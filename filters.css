@@ -59,8 +59,8 @@ background-size: cover;
  width: 80%;
  border-radius: 5px;
  border: 0.5px solid black;
- 
 }
+
 .fil-mid > select{
   padding: 5px;
   width: 80%;
@@ -96,6 +96,98 @@ background-size: cover;
   font-weight: 600;
   cursor: pointer;
   
+}
+
+@media (max-width: 943px){
+
+
+  main{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  
+  }
+  #filter{
+    background-color:white;
+    margin: 15px;
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 15px;
+    background-image: url("./assets/back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    }
+    .box-filter{
+      background-color: #fafdff;
+      gap: 5px;
+      width: 70%;
+      border-radius: 20px;
+      padding: 10px 0px 10px 0px;
+    }
+    .fil-top{
+      border-bottom: 1px solid black;
+      text-align: center;
+      padding: 3px;
+      width: 100%;
+    }
+    .fil-top > h4{
+     font-size: 12px;
+     font-weight: 700;
+    }
+    .fil-mid{
+      /* border: 2px solid black; */
+      padding: 5px;
+      width: 100%;
+      gap: 5px;
+    }
+    .fil-mid > input{
+     padding: 5px;
+     text-align: center;
+     width: 80%;
+     border-radius: 5px;
+     border: 0.5px solid black;
+    }
+    .fil-mid > select{
+      padding: 5px;
+      width: 80%;
+      border-radius: 5px;
+     }
+     .filt-boton{
+      /* border: 2px solid black; */
+      padding: 5px;
+      width: 100%;
+      text-align: center;
+      gap: 5px;
+    }
+    .button1{
+      padding: 5px;
+      border: none;
+      border-radius: 20px;
+      width: 80%;
+      background-color: rgb(126, 248, 126);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .button2{
+      padding: 5px;
+      border: none;
+      border-radius: 20px;
+      width: 80%;
+      background-color: rgb(253, 40, 40);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      
+    }
+
 }
 
 

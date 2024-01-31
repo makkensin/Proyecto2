@@ -1,4 +1,6 @@
 
+
+
 const products = [ 
   {
     name: "Volkswagen Golf",
@@ -182,15 +184,16 @@ const printFilters = () => {
               <option value="Agencia">Agencia</option>
               <option value="Concesionario">Concesionario</option>
            `
-    select.addEventListener('change', () => filterSeller())
+    select.addEventListener('change', () => filterSeller());
     const filtBoton = document.createElement("div");
     filtBoton.className = "filt-boton";
     filtBoton.classList.add("flex-column");
     const btn1 = document.createElement("button"); 
-    btn1.addEventListener('click', () => filterPrice())
+    btn1.addEventListener('click', () => filterPrice());
     btn1.className ="button1";
     btn1.textContent = "buscar";
     const btn2 = document.createElement("button"); 
+    btn2.addEventListener('click', () => clearFilters());
     btn2.className ="button2";
     btn2.textContent = "limpiar";
 
@@ -226,7 +229,6 @@ const filterSeller = () =>{
 }
 
 
-
 const filterPrice = () =>{
   const priceInput = document.querySelector("input");
   const priceProduct = products.filter((product) =>{
@@ -235,6 +237,14 @@ const filterPrice = () =>{
        }
       });
       printProducts(priceProduct)
+
+}
+
+
+const clearFilters = () =>{
+  printProducts(products);
+  priceInput.value = "";
+  vendedores.value ="All";
 
 }
 
