@@ -13,7 +13,7 @@ const products = [
   {
     name: "BMW Serie 3",
     price: 30000,
-    stars: 4,
+    stars: 3,
     reviews: 1600,
     seller: 'Compraventa',
     image: './assets/bmw.jpeg'
@@ -21,7 +21,7 @@ const products = [
   {
     name: "Mercedes-Benz",
     price: 40000,
-    stars: 4,
+    stars: 2,
     reviews: 1000,
     seller: 'Agencia',
     image: './assets/mercedes.jpeg'
@@ -43,9 +43,9 @@ const products = [
     image: './assets/volvo.jpeg'
   },
   {
-    name: "Jaguar F-PACE",
+    name: "Jaguar F.",
     price: 55000,
-    stars: 4,
+    stars: 5,
     reviews: 250,
     seller: 'Compraventa',
     image: './assets/jaguar.jpeg'
@@ -53,7 +53,7 @@ const products = [
   {
     name: "Peugeot 208",
     price: 15000,
-    stars: 4,
+    stars: 1,
     reviews: 3200,
     seller: 'Particular',
     image: './assets/peugeot.jpeg'
@@ -77,7 +77,7 @@ const products = [
   {
     name: "Alfa Romeo Giulia",
     price: 48000,
-    stars: 4,
+    stars: 5,
     reviews: 600,
     seller: 'Agencia',
     image: './assets/alfa.jpeg'
@@ -127,11 +127,25 @@ printHeader();
 const printProducts = (array) => {
 
   const productos = document.querySelector("#products");
-  productos.innerHTML = '';
+   const allCars = document.createElement("div");
+   allCars.className = "all-cars"
 
+  productos.innerHTML = '';
+  const first = document.createElement("div");
+  first.className = "first";
+  first.innerHTML += `
+              <p>MARCA</p>
+              <p>PRECIO</p>
+              <p>ESTRELLAS</p>
+              <p>VISITAS</p>
+              <p>VENDEDOR</p>
+              <p>IMAGEN</p>
+         `
+  productos.appendChild(first);
       for (const product of array) {
           const car = document.createElement("div");
           car.classList = "product";
+          car.addEventListener("click", () => printCar(productos ,product));
           const name = document.createElement("h3");
           name.textContent = product.name;
           const price = document.createElement("p");
@@ -145,16 +159,17 @@ const printProducts = (array) => {
           const img = document.createElement("img");
           img.src = product.image;
 
-
+         
           car.appendChild(name)
           car.appendChild(price)
           car.appendChild(star)
           car.appendChild(reviews)
           car.appendChild(seller)
           car.appendChild(img);
-          productos.appendChild(car);
-
-     }
+          allCars.appendChild(car)
+          
+        }
+        productos.appendChild(allCars);
 }
 
 printProducts(products);
@@ -232,7 +247,7 @@ const filterSeller = () =>{
 const filterPrice = () =>{
   const priceInput = document.querySelector("input");
   const priceProduct = products.filter((product) =>{
-       if (priceInput.value >= product.price) {
+       if (priceInput.value > product.price) {
          return product
        }
       });
@@ -243,11 +258,43 @@ const filterPrice = () =>{
 
 const clearFilters = () =>{
   printProducts(products);
+  const priceInput = document.querySelector("input");
+  const vendedores = document.querySelector("#seller");
   priceInput.value = "";
   vendedores.value ="All";
 
 }
 
+
+
+const printCar = (productos, product) =>{
+  productos.innerHTML = '';
+  const selectedCar = document.createElement("div");
+  selectedCar.classList = "selected-car";
+
+  const name = document.createElement("h3");
+  name.textContent = product.name;
+  const price = document.createElement("p");
+  price.textContent = "Precio: " + product.price + " $";
+  const stars = document.createElement("p");
+  stars.textContent = "Estrellas: " + product.stars;
+  const reviews = document.createElement("p");
+  reviews.textContent = "Visitas: " + product.reviews;
+  const seller = document.createElement("p");
+  seller.textContent = "Vendedor: " + product.seller;
+  const img = document.createElement("img");
+  img.src = product.image;
+  
+  selectedCar.appendChild(name);
+  selectedCar.appendChild(price);
+  selectedCar.appendChild(stars);
+  selectedCar.appendChild(reviews);
+  selectedCar.appendChild(seller);
+  selectedCar.appendChild(img);
+
+  productos.appendChild(selectedCar);
+
+}
 
 
 

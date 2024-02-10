@@ -7,16 +7,16 @@
   box-shadow: 10px 10px 50px -8px rgba(0,0,0,0.75);
   background-color:white;
   margin: 15px;
+  /* padding-top: 45px; */
   width: 70%;
   border-radius: 10px;
-  height: 80vh;
+  /* height: 80vh; */
   max-height: 80vh;
   overflow-y: scroll;
   display: flex;
   gap: 5px;
-  flex-wrap: wrap;
-  
-
+  flex-wrap: wrap; 
+  /* position: relative; */
 }
 
 #products::-webkit-scrollbar {
@@ -25,19 +25,27 @@
   border: 3px solid rgb(159, 37, 4); 
 }
 
+.all-cars {
+  margin-top: 50px;
+  width: 100%;
+ 
+}
+
 .product{
-  /* border: 2px solid black; */
   display: grid;
   align-items:center;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: start;
   grid-template-columns: repeat(6, 1fr);
   width: 100%;
   padding: 18px;
+  /* margin-top: 50px; */
+ 
   padding-left: 50px;
   transition: all 400ms ease;
   cursor: pointer;
   border-radius: 20px;
+ 
 }
 
 .product:hover{
@@ -45,14 +53,56 @@ transform: translateY(-4%);
 background-color: rgb(240, 240, 240);
 }
 
+.first{
+  display: grid;
+  align-items:center;
+  justify-content:flex-start;
+  text-align: start;
+  grid-template-columns: repeat(6, 1fr);
+  width: 65%;
+  cursor: pointer;
+  position:fixed;
+  border-radius: 20px;
+  /* top: 1; */
+  /* transform: translate(-50%,-50%); */
+  background-color: white;
+  z-index: 1;
+  
+}
+
+.first > p {
+  font-size: 20px;
+  color: rgb(188, 2, 2);
+  padding-left: 50px;
+  padding-top: 5px;
+  height: 50px;
+}
+
 .product  h3 , p {
   font-size: 14px;
+}
+
+.product > h3 {
+  color: rgb(188, 2, 2);
 }
 
 .product > img {
   width: 55px;
   object-fit: contain;
   border-radius: 10px;
+  transition: all 400ms ease;
+}
+
+.product > img:hover {
+  transform: scale(3.2);
+}
+
+.selected-car{
+ width: 100%;
+ height: 300px;
+ background-color: blue;
+
+
 }
 
 
@@ -87,6 +137,8 @@ background-color: rgb(240, 240, 240);
     cursor: pointer;
     border-radius: 20px;
   }
+
+  
   .product  h3 , p {
     font-size: 10px;
   }
@@ -98,5 +150,5 @@ background-color: rgb(240, 240, 240);
   display: none;
   }
   
-
 }
+
