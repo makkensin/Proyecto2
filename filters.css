@@ -5,6 +5,7 @@ main{
   background-color: #eef0f4;
   display: flex;
   gap: 10px;
+  height: 80vh;
 
 }
 
@@ -17,7 +18,7 @@ margin: 15px;
 width: 30%;
 border-radius: 10px;
 /* border: 2px solid black; */
-height: 80vh;
+height: 75vh;
 display: flex;
 justify-content: center;
 align-items: start;

@@ -134,12 +134,8 @@ const printProducts = (array) => {
   const first = document.createElement("div");
   first.className = "first";
   first.innerHTML += `
-              <p>MARCA</p>
-              <p>PRECIO</p>
-              <p>ESTRELLAS</p>
-              <p>VISITAS</p>
-              <p>VENDEDOR</p>
-              <p>IMAGEN</p>
+              <p></p>
+              
          `
   productos.appendChild(first);
       for (const product of array) {
@@ -150,8 +146,6 @@ const printProducts = (array) => {
           name.textContent = product.name;
           const price = document.createElement("p");
           price.textContent = product.price +" $";
-          const star = document.createElement("p");
-          star.textContent = product.stars;
           const reviews = document.createElement("p");
           reviews.textContent = product.reviews;
           const seller = document.createElement("p");
@@ -162,7 +156,6 @@ const printProducts = (array) => {
          
           car.appendChild(name)
           car.appendChild(price)
-          car.appendChild(star)
           car.appendChild(reviews)
           car.appendChild(seller)
           car.appendChild(img);
@@ -285,12 +278,12 @@ const printCar = (productos, product) =>{
   const img = document.createElement("img");
   img.src = product.image;
   
+  selectedCar.appendChild(img);
   selectedCar.appendChild(name);
   selectedCar.appendChild(price);
   selectedCar.appendChild(stars);
   selectedCar.appendChild(reviews);
   selectedCar.appendChild(seller);
-  selectedCar.appendChild(img);
 
   productos.appendChild(selectedCar);
 
